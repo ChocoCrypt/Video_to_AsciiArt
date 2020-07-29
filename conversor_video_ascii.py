@@ -44,7 +44,7 @@ def video_to_frames(video_name):
     count = 0
     print('Converting video to frames')
     while success:
-        cv2.imwrite("frames/frame_{}_{}.jpg".format(count,video_name), image)     # save frame as JPEG file      
+        cv2.imwrite("frames/{:015d}.jpg".format(count), image)     # save frame as JPEG file      
         success,image = vidcap.read()
         count += 1
     print('Done from video to frames')
@@ -101,7 +101,7 @@ def crear_imagenes_png_ascii(resolucion):
     cont = 0
     print('Creando Imagenes Ascii ... ')
     for i in lista_cuadros_en_ascii:
-        name = 'cuadros_ascii/{}'.format(cont)
+        name = 'cuadros_ascii/{:015d}'.format(cont)
         cont += 1
         print('{}/{} imagenes procesadas'.format(cont,len(lista_cuadros_en_ascii)))
         create_image_text(resolucion*6 , resolucion*6 , i , name)
@@ -109,7 +109,8 @@ def crear_imagenes_png_ascii(resolucion):
 
 #agarra todas las imagenes que contienen ascii art y crea un video de 24 cuadros por segundo
 def crear_video(audio):
-    os.system('ffmpeg -r 24 -f image2 -s 1920x1080 -i cuadros_ascii/%d.png -i {} -vcodec libx264 -crf 25  -pix_fmt yuv420p ascii_video.mp4'.format(audio))
+    #cambie el regex de %d a %04d
+    os.system('ffmpeg -r 24 -f image2 -s 1920x1080 -i cuadros_ascii/%015d.png -i {} -vcodec libx264 -crf 25  -pix_fmt yuv420p ascii_video.mp4'.format(audio))
 
 #borra todas las cosas que se crearon
 def clean():
