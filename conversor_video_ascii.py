@@ -45,6 +45,7 @@ def video_to_frames(video_name):
     print('Converting video to frames')
     while success:
         cv2.imwrite("frames/{:015d}.jpg".format(count), image)     # save frame as JPEG file      
+        print('creado frame {}'.format(count))
         success,image = vidcap.read()
         count += 1
     print('Done from video to frames')
