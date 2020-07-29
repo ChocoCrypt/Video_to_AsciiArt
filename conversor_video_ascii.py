@@ -74,7 +74,7 @@ def lista_cuadros_ascii_text(resolucion):
     for i in lista:
         ascii_image = image_to_ascii(i , resolucion)
         lista_cuadros.append(ascii_image)
-#        print(cont)
+        print('{}/{} cuadros añadidos a la lista'.format(cont , len(lista)))
 #        print(ascii_image)
         cont += 1
     print('Lista Cuadros Texto creada')
