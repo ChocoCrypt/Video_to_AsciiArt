@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import cv2
 import subprocess
 from PIL import Image, ImageDraw, ImageFont
