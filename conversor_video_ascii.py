@@ -101,7 +101,7 @@ def crear_imagenes_png_ascii(resolucion):
     cont = 0
     print('Creando Imagenes Ascii ... ')
     for i in lista_cuadros_en_ascii:
-        name = 'cuadros_ascii/00{}'.format(cont)
+        name = 'cuadros_ascii/{}'.format(cont)
         cont += 1
         print('{}/{} imagenes procesadas'.format(cont,len(lista_cuadros_en_ascii)))
         create_image_text(resolucion*6 , resolucion*6 , i , name)
