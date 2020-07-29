@@ -109,13 +109,12 @@ def crear_imagenes_png_ascii(resolucion):
 
 #agarra todas las imagenes que contienen ascii art y crea un video de 24 cuadros por segundo
 def crear_video(audio):
-    os.system('ffmpeg -r 24 -f image2 -s 1920x1080 -i cuadros_ascii/00%d.png -i {} -vcodec libx264 -crf 25  -pix_fmt yuv420p ascii_video.mp4'.format(audio))
+    os.system('ffmpeg -r 24 -f image2 -s 1920x1080 -i cuadros_ascii/%d.png -i {} -vcodec libx264 -crf 25  -pix_fmt yuv420p ascii_video.mp4'.format(audio))
 
 #borra todas las cosas que se crearon
 def clean():
     os.system('rm frames/*')
     os.system('rm cuadros_ascii/*')
-    os.system('clear')
     print('Todo limpio y video creado')
 
 #main
