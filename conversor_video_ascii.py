@@ -136,4 +136,4 @@ if(len(argv) == 4):
     run()
 else:
     print('Uso:')
-    print('python3 {} <video.mp4> <audio.mp3> <resolucion(numero)>')
+    print('python3 {} <video.mp4> <audio.mp3> <resolucion(numero)>'.format(argv[0]))
